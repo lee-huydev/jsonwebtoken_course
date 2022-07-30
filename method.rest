@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:5000
+
+### Get user========================================
+GET {{baseUrl}}/users
+
+### Register user===================================
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+
+{
+    "name": "Huy123",
+    "age": 20,
+    "address": "CT",
+    "gender": "male",
+    "email": "you1234@gmail.com",
+    "password": "123123"
+}
+
+### Login===================================================
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "you1234@gmail.com",
+    "password": "123123"
+}
+### Products================================================
+GET {{baseUrl}}/products
+### Post product need token=================================
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+    "product_name": "Pepsi",
+    "price": "13.0000",
+    "amount": 1001
+}
+
+###Update product need token=======================
+PATCH {{baseUrl}}/products/62e5045238205d2e68b0d210
+Content-Type: application/json
+
+{
+    "product_name": "Mirinda",
+    "amount": "1000"
+}
+### Delete product need token===========================
+DELETE {{baseUrl}}/products/62e507c20ffe75391c864db1
